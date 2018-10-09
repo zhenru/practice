@@ -46,9 +46,27 @@ public class DefaultBinNode<T> extends BinNode<T> {
         return rightNode;
     }
 
+    /**
+     * 当前节点的后继节点
+     *
+     * @return
+     */
     @Override
     public BinNode<T> succ() {
-        return null;
+        //记录当前节点
+        BinNode<T> s = this;
+        if (s.rChild != null) {
+            //如果有右子树，返回右子树的最左边的那个节点。
+            s = s.rChild;
+            while (s.lChild!=null){
+                s = s.lChild;
+            }
+        } else {
+            //如果没有右子树，就是当前节点的
+        //todo todo 当前节点应该如何进行实现 muzhe
+
+        }
+        return s;
     }
 
     @Override
