@@ -24,7 +24,7 @@ public class Lambdas {
         List<Apple> colorFilterAppleList = filterApples(apples, (Apple apple) -> Common.YELLOW.equals(apple.getColor()));
         System.out.println(colorFilterAppleList);
 
-        Comparator<Apple> heavyComparator = ((Apple first , Apple second) ->{return -1 * Integer.valueOf(first.getWeight()) .compareTo(second.getWeight()) ;}) ;
+        Comparator<Apple> heavyComparator = ((Apple first , Apple second) ->-1 * Integer.valueOf(first.getWeight()) .compareTo(second.getWeight())) ;
 
         apples.sort(heavyComparator);
         System.out.println(apples);

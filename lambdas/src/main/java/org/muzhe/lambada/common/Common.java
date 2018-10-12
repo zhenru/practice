@@ -27,8 +27,9 @@ public class Common {
      */
     public static final List<Apple> generateAppleList() {
 
-        List<Apple> appleList = Arrays.asList(new Apple(40, YELLOW),
+        List<Apple> appleList = Arrays.asList(
                 new Apple(155, RED),
+                new Apple(40, YELLOW),
                 new Apple(240, BLACK));
         return appleList;
     }
