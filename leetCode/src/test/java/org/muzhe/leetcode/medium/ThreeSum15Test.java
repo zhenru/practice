@@ -19,4 +19,6 @@ public class ThreeSum15Test {
         List<List<Integer>> resultList = threeSum15.threeSum(numbers);
         System.out.println(resultList);
     }
+
+
 }

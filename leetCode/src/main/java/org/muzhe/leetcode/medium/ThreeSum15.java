@@ -19,6 +19,10 @@ public class ThreeSum15 {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < nums.length - 2; i++) {
+            //这里是用来处理当前对象中需要将相同的元素给过滤掉的实现。
+            if (i != 0 && nums[i] == nums[i-1]){
+                continue;
+            }
             int sum = 0 - nums[i];
             List<List<Integer>> lists = twoSum(nums, i + 1, nums.length - 1, sum);
             for (List<Integer> localResult : lists) {
@@ -26,6 +30,7 @@ public class ThreeSum15 {
                 result.add(localResult);
             }
         }
+
         return result;
 
     }
@@ -36,7 +41,10 @@ public class ThreeSum15 {
         while (start < end) {
             int localSum = nums[start] + nums[end];
             if (localSum == sum) {
-                result.add(Arrays.asList(nums[start], nums[end]));
+                List<Integer> local = new ArrayList<>();
+                local.add(nums[start]);
+                local.add(nums[end]);
+                result.add(local);
                 start++;
                 end--;
             } else if (localSum > sum) {
