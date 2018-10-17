@@ -35,7 +35,17 @@ public class ThreeSum15 {
 
     }
 
-    private List<List<Integer>> twoSum(int[] nums, int start, int end, int sum) {
+    /**
+     * 在nums 数组中 [start,end]中的两个数的和等于sum的所有的序列对，其中需要去重
+     * 　这个当中如何去重的。
+     *
+     * @param nums          数值序列
+     * @param start
+     * @param end
+     * @param sum
+     * @return
+     */
+    protected List<List<Integer>> twoSum(int[] nums, int start, int end, int sum) {
 
         List<List<Integer>> result = new ArrayList<>();
         while (start < end) {

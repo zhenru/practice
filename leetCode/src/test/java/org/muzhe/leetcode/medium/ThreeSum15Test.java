@@ -21,4 +21,20 @@ public class ThreeSum15Test {
     }
 
 
+    @Test
+    public void testThreeSum(){
+        int[]   numbers = new int[]{-2,0,0,2,2};
+        List<List<Integer>> lists = threeSum15.threeSum(numbers);
+        System.out.println(lists);
+    }
+
+    @Test
+    public void testTwoSum(){
+
+        int[] numbers = new int[]{0,0,2,2};
+        List<List<Integer>> lists = threeSum15.twoSum(numbers, 0, numbers.length - 1, 2);
+        System.out.println(lists);
+    }
+
+
 }
