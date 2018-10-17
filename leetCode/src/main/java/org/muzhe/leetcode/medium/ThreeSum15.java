@@ -20,7 +20,7 @@ public class ThreeSum15 {
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < nums.length - 2; i++) {
             //这里是用来处理当前对象中需要将相同的元素给过滤掉的实现。
-            if (i != 0 && nums[i] == nums[i-1]){
+            if (i != 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
             int sum = 0 - nums[i];
@@ -39,7 +39,7 @@ public class ThreeSum15 {
      * 在nums 数组中 [start,end]中的两个数的和等于sum的所有的序列对，其中需要去重
      * 　这个当中如何去重的。
      *
-     * @param nums          数值序列
+     * @param nums  数值序列
      * @param start
      * @param end
      * @param sum
@@ -48,19 +48,29 @@ public class ThreeSum15 {
     protected List<List<Integer>> twoSum(int[] nums, int start, int end, int sum) {
 
         List<List<Integer>> result = new ArrayList<>();
-        while (start < end) {
-            int localSum = nums[start] + nums[end];
+        int i = start, j = end;
+        while (i < j) {
+            while (i > start && i<end && nums[i] == nums[i - 1]) {
+                i++;
+            }
+            while (j < end && j>end&& nums[j] == nums[j + 1]) {
+                j--;
+            }
+            if (i >= j) {
+                break;
+            }
+            int localSum = nums[i] + nums[j];
             if (localSum == sum) {
                 List<Integer> local = new ArrayList<>();
-                local.add(nums[start]);
-                local.add(nums[end]);
+                local.add(nums[i]);
+                local.add(nums[j]);
                 result.add(local);
-                start++;
-                end--;
+                i++;
+                j--;
             } else if (localSum > sum) {
-                end--;
+                j--;
             } else {
-                start++;
+                i++;
             }
         }
         return result;

@@ -20,10 +20,26 @@ public class ThreeSum15Test {
         System.out.println(resultList);
     }
 
+    @Test
+    public void testThreeSum1(){
+
+        int[]  numbers = new int[]{-2,0,3,-1,4,0,3,4,1,1,1,-3,-5,4,0};
+        List<List<Integer>> lists = threeSum15.threeSum(numbers);
+        System.out.println(lists);
+    }
+
 
     @Test
     public void testThreeSum(){
         int[]   numbers = new int[]{-2,0,0,2,2};
+        List<List<Integer>> lists = threeSum15.threeSum(numbers);
+        System.out.println(lists);
+    }
+
+    @Test
+    public void testThreeSum3(){
+
+        int[] numbers = new int[]{2,-3,0,-2,-5,-5,-4,1,2,-2,2,0,2,-4};
         List<List<Integer>> lists = threeSum15.threeSum(numbers);
         System.out.println(lists);
     }
