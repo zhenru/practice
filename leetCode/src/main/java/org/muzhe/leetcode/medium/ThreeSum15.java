@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 在一个排序的算法中是如何进行去从的呢？
+ * 在排序的数组中，如果存在相同的数，这些数值将会连续的存放在数组中，如果需要忽略相同的数值，那么负责处理逻辑的将是第一个元素，然后使用一个while将所有的相同的元素都给忽略掉，知道第一个元素为止。
+ * 但是在排除万相同元素后需要对当前元素的范围进行校验，因为这个过程可能会越界
  * @author muzhe-wang on  18-10-12 下午5:08.
  */
 public class ThreeSum15 {
@@ -30,7 +33,6 @@ public class ThreeSum15 {
                 result.add(localResult);
             }
         }
-
         return result;
 
     }
